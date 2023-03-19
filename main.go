@@ -20,8 +20,8 @@ func main() {
 	}
 	client.OnMessage(func(msg *revoltgo.Message) {
 		if msg.AuthorId == "ehvsSkIKY5GF59fk8Vuf_JCrIUEAK8Il645LQDrUh_" {
-				return
-			} else {
+			return
+		} else {
 			var messagestring string = msg.Content.(string)
 			if (strings.Contains(strings.ToLower(messagestring), "what would you do")) || (strings.Contains(strings.ToLower(messagestring), "what would you use")) {
 				sendMsg := &revoltgo.SendMessage{}
@@ -30,6 +30,11 @@ func main() {
 				sendMsgTwo := &revoltgo.SendMessage{}
 				sendMsgTwo.SetContent("I would use a hasmap.")
 				msg.Reply(true, sendMsgTwo)
+			}
+			if strings.Contains(strings.ToLower(messagestring), "seedcrackerx") {
+				sendMsg := &revoltgo.SendMessage{}
+				sendMsg.SetContent("https://media.discordapp.net/attachments/1081690345995247646/1081986210966290573/893615002015-1-316249021.jpg")
+				msg.Reply(true, sendMsg)
 			}
 			if messagestring == "!one" {
 				sendMsg := &revoltgo.SendMessage{}
