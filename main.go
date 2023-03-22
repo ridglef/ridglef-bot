@@ -20,7 +20,6 @@ func main() {
 	}
 	client.OnMessage(func(msg *revoltgo.Message) {
 		if msg.AuthorId == "ehvsSkIKY5GF59fk8Vuf_JCrIUEAK8Il645LQDrUh_" {
-			return
 		} else {
 			var messagestring string = msg.Content.(string)
 			if (strings.Contains(strings.ToLower(messagestring), "what would you do")) || (strings.Contains(strings.ToLower(messagestring), "what would you use")) {
